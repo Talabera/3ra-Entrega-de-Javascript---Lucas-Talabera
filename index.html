@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Tabla</title>
+  </head>
+  <body>
+    <h1>Registro de Clientes</h1>
+    <form id="clienteForm">
+      <input
+        type="number"
+        id="numeroCliente"
+        placeholder="N de Cliente"
+        min="1"
+        max="99"
+        required
+      />
+      <input type="text" id="nombreCliente" placeholder="Nombre" required />
+      <input
+        type="number"
+        id="telefonoCliente"
+        placeholder="N de Teléfono" 
+        min="1"
+        required
+      />
+      <select id="talleRemera" required>
+        <option value="">Seleccione Talle de Remera</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+        <option value="14">14</option>
+        <option value="16">16</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <select id="talleShort" required>
+        <option value="">Seleccione Talle de Short</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+        <option value="14">14</option>
+        <option value="16">16</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <input
+        type="number"
+        id="entregaCliente"
+        placeholder="$ Entrega"
+        min="100"
+        max="99999"
+        required
+      />
+      <label for="sublimacion">Sublimación:</label>
+      <input type="checkbox" id="sublimacion" name="sublimacion" />
+      <input type="text" id="nombreRemera" placeholder="Nombre en Remera" />
+      <input type="number" id="numeroRemera" placeholder="N de Remera" />
+      <input
+        type="number"
+        id="faltante"
+        placeholder="Faltante"
+        min="1"
+        max="99999"
+      />
+      <select id="estado" required>
+        <option value="">Seleccione Estado</option>
+        <option value="Entregado">Entregado</option>
+        <option value="Pendiente">Pendiente</option>
+      </select>
+      <button type="submit">Guardar Cliente</button>
+    </form>
+    <table id="clientesTable">
+      <tr>
+        <th>N de Cliente</th>
+        <th>Nombre</th>
+        <th>N de Teléfono</th>
+        <th>Talle de Remera</th>
+        <th>Talle de Short</th>
+        <th>$ Entrega</th>
+        <th>Sublimación</th>
+        <th>Nombre en Remera</th>
+        <th>N de Remera</th>
+        <th>Faltante</th>
+        <th>Estado</th>
+      </tr>
+    </table>
+    <script src="./main.js"></script>
+  </body>
+</html>

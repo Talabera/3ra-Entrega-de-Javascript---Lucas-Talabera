@@ -1,0 +1,32 @@
+*{
+    background-image: url(https://images.pexels.com/photos/8099581/pexels-photo-8099581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+body {
+
+    font-family: Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+form {
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="number"],
+select {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 200px;
+}
+button {
+    padding: 5px 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #161515;
+    padding: 8px;
+    text-align: left;
+}
