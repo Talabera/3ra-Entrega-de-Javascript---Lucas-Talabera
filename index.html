@@ -50,30 +50,6 @@
         <option value="L">L</option>
         <option value="XL">XL</option>
       </select>
-      <input
-        type="number"
-        id="entregaCliente"
-        placeholder="$ Entrega"
-        min="100"
-        max="99999"
-        required
-      />
-      <label for="sublimacion">Sublimación:</label>
-      <input type="checkbox" id="sublimacion" name="sublimacion" />
-      <input type="text" id="nombreRemera" placeholder="Nombre en Remera" />
-      <input type="number" id="numeroRemera" placeholder="N de Remera" />
-      <input
-        type="number"
-        id="faltante"
-        placeholder="Faltante"
-        min="1"
-        max="99999"
-      />
-      <select id="estado" required>
-        <option value="">Seleccione Estado</option>
-        <option value="Entregado">Entregado</option>
-        <option value="Pendiente">Pendiente</option>
-      </select>
       <button type="submit">Guardar Cliente</button>
     </form>
     <table id="clientesTable">
@@ -83,14 +59,12 @@
         <th>N de Teléfono</th>
         <th>Talle de Remera</th>
         <th>Talle de Short</th>
-        <th>$ Entrega</th>
-        <th>Sublimación</th>
-        <th>Nombre en Remera</th>
-        <th>N de Remera</th>
-        <th>Faltante</th>
-        <th>Estado</th>
+        <th>Acciones</th>
       </tr>
     </table>
+    
     <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./sweetalert.js"></script>
   </body>
 </html>

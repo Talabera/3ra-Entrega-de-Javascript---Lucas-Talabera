@@ -16,13 +16,6 @@ function guardarCliente(event) {
   const telefonoCliente = document.getElementById("telefonoCliente").value;
   const talleRemera = document.getElementById("talleRemera").value;
   const talleShort = document.getElementById("talleShort").value;
-  const entregaCliente = document.getElementById("entregaCliente").value;
-  const sublimacion = document.getElementById("sublimacion").checked;
-  const nombreRemera = document.getElementById("nombreRemera").value;
-  const numeroRemera = document.getElementById("numeroRemera").value;
-  const faltante = document.getElementById("faltante").value;
-  const estado = document.getElementById("estado").value;
-
   // Crear el objeto cliente
   const cliente = {
     numeroCliente: numeroCliente,
@@ -30,12 +23,6 @@ function guardarCliente(event) {
     telefonoCliente: telefonoCliente,
     talleRemera: talleRemera,
     talleShort: talleShort,
-    entregaCliente: entregaCliente,
-    sublimacion: sublimacion,
-    nombreRemera: nombreRemera,
-    numeroRemera: numeroRemera,
-    faltante: faltante,
-    estado: estado,
   };
 
   // Agregar el cliente al array
@@ -66,26 +53,24 @@ function mostrarClientes() {
     const telefonoClienteCell = row.insertCell(2);
     const talleRemeraCell = row.insertCell(3);
     const talleShortCell = row.insertCell(4);
-    const entregaClienteCell = row.insertCell(5);
-    const sublimacionCell = row.insertCell(6);
-    const nombreRemeraCell = row.insertCell(7);
-    const numeroRemeraCell = row.insertCell(8);
-    const faltanteCell = row.insertCell(9);
-    const estadoCell = row.insertCell(10);
-
+    const accionesCell = row.insertCell(5); 
+    
     numeroClienteCell.innerHTML = cliente.numeroCliente;
     nombreClienteCell.innerHTML = cliente.nombreCliente;
     telefonoClienteCell.innerHTML = cliente.telefonoCliente;
     talleRemeraCell.innerHTML = cliente.talleRemera;
     talleShortCell.innerHTML = cliente.talleShort;
-    entregaClienteCell.innerHTML = cliente.entregaCliente;
-    sublimacionCell.innerHTML = cliente.sublimacion ? "Sí" : "No";
-    nombreRemeraCell.innerHTML = cliente.nombreRemera;
-    numeroRemeraCell.innerHTML = cliente.numeroRemera;
-    faltanteCell.innerHTML = cliente.faltante;
-    estadoCell.innerHTML = cliente.estado;
+    
+    // botón de eliminación
+    const botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "Eliminar";
+    botonEliminar.addEventListener("click", () => eliminarCliente(i)); // Llama a la función eliminarCliente pasando el índice del cliente
+    
+    // Agregar el botón
+    accionesCell.appendChild(botonEliminar);
   }
 }
+
 
 // llamar a la función guardarCliente
 const form = document.getElementById("clienteForm");
@@ -109,3 +94,7 @@ function filtrarClientes() {
 const btnFiltrar = document.getElementById("btnFiltrar");
 btnFiltrar.addEventListener("click", filtrarClientes);
 
+function eliminarCliente(index) {
+  clientes.splice(index, 1); //
+  localStorage.setItem("clientes", JSON.stringify(clientes)); 
+  mostrarClientes(); }
